@@ -83,6 +83,45 @@ There are several features that could be added to improve CineBox:
 - **Graphical User Interface (GUI)**: Developing a GUI using frameworks like Tkinter or PyQt.
 - **Online Ticketing**: Expanding the program to handle online reservations, integrating a payment gateway.
 
+## CineBox 2.0: Object-Oriented Movie Ticketing System
+The updated version of CineBox, contained in `ProgFunA2_s3970066.py`, reimplements the movie ticketing system using an object-oriented programming (OOP) paradigm. This update introduces several new capabilities and enhancements:
+
+### Key Features of CineBox 2.0
+1. **Object-Oriented Design**: The system now uses classes to represent core entities like customers, movies, tickets, and bookings. This modular design enhances maintainability and scalability.
+2. **Customer Types**:
+   - **Standard Customer**: Regular customers with no discounts.
+   - **RewardFlatCustomer**: Customers with a flat discount rate (default 20%) on ticket purchases.
+   - **RewardStepCustomer**: Customers who receive a discount if they exceed a threshold amount. The discount rate and threshold can be customized.
+3. **Movie and Ticket Management**: Introduces `Movie`, `Ticket`, and `GroupTicket` classes to manage movie details, ticket types, and group tickets that bundle multiple ticket types at a discounted price.
+4. **Booking System**: The `Booking` class encapsulates all booking-related information, including the customer, movie, ticket type, quantity, and calculation of total costs (with discounts and fees).
+5. **Central Data Repository**: A `Records` class stores and manages data about customers, movies, tickets, and bookings, providing a single source of truth for the program's operations.
+6. **Enhanced Menu System**: The menu has been redesigned to include:
+   - **File Handling**: Reads customer, movie, and ticket information from text files (`customers.txt`, `movies.txt`, `tickets.txt`). If files are missing, the program gracefully exits with an error message.
+   - **Customer Registration**: New customers can register as standard, RewardFlat, or RewardStep customers during ticket purchase.
+   - **Group Ticket Purchases**: Users can purchase a group ticket (e.g., family pack) containing multiple ticket types at a discounted rate.
+7. **Exception Handling**: The system now includes robust exception handling for invalid inputs, such as incorrect movie names, ticket types, and quantities.
+8. **Command Line Arguments**: CineBox 2.0 supports command line arguments to load customer, movie, ticket, and booking files at startup, making it more flexible for different deployment scenarios.
+9. **Persistent Booking Records**: When the program terminates, it updates the customer, movie, and booking files to reflect the latest state, ensuring data consistency across sessions.
+10. **Display Features**: Adds options to display existing bookings, the most popular movies, and a detailed sales record for all movies.
+
+### Example Usage
+- **Purchase a Ticket with OOP Enhancements**:
+  - Select customer type: *RewardFlat* or *RewardStep*
+  - Choose movie and ticket type using either name or ID
+  - Register new customers directly during the ticket purchase
+
+- **Manage Group Tickets**:
+  - Purchase tickets like *Family3* that include multiple ticket types bundled together
+  - Get discounted rates for bulk ticket purchases
+
+- **View and Add Movies**:
+  - Add movies through the menu, which are then saved and loaded in future sessions
+
+### Advanced Features by Levels
+- **CREDIT Level**: Adds support for custom exception handling and introduces group tickets at a discounted price.
+- **DI Level**: Allows multiple ticket types in one booking and provides options to adjust discount rates for rewards customers.
+- **HD Level**: Enables the program to load previous booking data, display all bookings, and automatically update customer, movie, and booking information at the end of each session.
+
 ## Credits
 - **Author**: Amay (s3970066)
 - **Course**: RMIT - Programming Fundamentals (COSC2531)
@@ -92,4 +131,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Feedback
 If you have any questions, suggestions, or would like to contribute to this project, feel free to open an issue or submit a pull request.
-
